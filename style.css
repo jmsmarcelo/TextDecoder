@@ -1,0 +1,8 @@
+body {
+    text-align: center;
+    background: #CCCCCC;
+}
+textarea {
+    width: 400px;
+    height: 200px;
+}
