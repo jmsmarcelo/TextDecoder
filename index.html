@@ -12,6 +12,25 @@
             textarea {
                 width: 400px;
                 height: 200px;
+                border-radius: 15px;
+                padding: 10px;
+            }
+            textarea:hover {
+                border-color:#0f024b
+            }
+            input[type="button"] {
+                border-radius: 5px;
+                padding: 7px;
+                border-width: 1px;
+                cursor: pointer;
+            }
+            #log {
+                width: 385px;
+                height: 185px;
+                margin: auto;
+                border: 1px solid #0f024b;
+                border-radius: 15px;
+                padding: 10px;
             }
         </style>
         <script>
@@ -47,7 +66,7 @@
     </head>
     <body>
         <h1>Decodificador de Texto</h1>
-        <textarea id="txt"></textarea>
+        <textarea id="txt" placeholder="Digite seu texto"></textarea>
         <div><input type="button" value="Encrypt/Decrypt"/></div>
         <br/>
         <h3>Output: <button disabled>Copiar</button></h3>
