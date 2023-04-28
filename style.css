@@ -13,6 +13,7 @@ textarea:hover {
     border-color:#0f024b
 }
 input[type="button"] {
+    width: 100px;
     border-radius: 5px;
     padding: 7px;
     border-width: 1px;
