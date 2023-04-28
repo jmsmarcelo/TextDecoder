@@ -11,7 +11,7 @@
         <h1>Decodificador de Texto</h1>
         <textarea id="txt" placeholder="Digite seu texto"></textarea>
         <div><input type="button" value="Encrypt/Decrypt"/></div>
-        <h3>Output<button disabled>Copiar</button></h3>
+        <h3>Output<button disabled>Copy</button></h3>
         <div id="log"></div>
 
         <script>
@@ -21,6 +21,10 @@
             var idLog = document.getElementById('log');
             btCopy.onclick = function() {
                 copyText(idLog);
+                btCopy.innerText = 'Copied!';
+                setTimeout(function() {
+                    btCopy.innerText = 'Copy';
+                }, 1000);
             }
             idTxt.onkeyup = function() {
                 idTxt.value = fixTxt(idTxt.value);
