@@ -30,7 +30,7 @@ h3 {
 }
 button {
     position: absolute;
-    right: 35%;
+    margin: 0 120px 0;
 }
 #log {
     width: 385px;
