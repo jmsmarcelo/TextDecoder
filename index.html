@@ -10,13 +10,14 @@
     <body>
         <h1>Decodificador de Texto</h1>
         <textarea id="txt" placeholder="Digite seu texto"></textarea>
-        <div><input type="button" value="Encrypt/Decrypt"/></div>
+        <div><input type="button" id="enc" value="Encrypt"/> <input type="button" id="dec" value="Decrypt"/></div>
         <h3>Output<button disabled>Copy</button></h3>
         <div id="log"></div>
 
         <script>
             var idTxt = document.getElementById('txt');
-            var input = document.querySelector('input[type="button"]');
+            var idEnc = document.getElementById('enc');
+            var idDec = document.getElementById('dec');
             var btCopy = document.querySelector('button');
             var idLog = document.getElementById('log');
             btCopy.onclick = function() {
@@ -29,14 +30,19 @@
             idTxt.onkeyup = function() {
                 idTxt.value = fixTxt(idTxt.value);
             }
-            input.onclick = function() {
-                if(idTxt.value.match(/enter|imes|ai|ober|ufat/g)) {
-                    idLog.innerText = decrypt(idTxt.value);
-                } else {
-                    idLog.innerText = encrypt(idTxt.value);
-                }
+            idEnc.onclick = function() {
+                idLog.innerText = encrypt(idTxt.value);
+
                 if(idTxt.value != '') {
                     btCopy.disabled = false;
+                }
+            }
+            idDec.onclick = function() {
+                if(idTxt.value.match(/enter|imes|ai|ober|ufat/g)) {
+                    idLog.innerText = decrypt(idTxt.value);
+                    if(idTxt.value != '') {
+                        btCopy.disabled = false;
+                    }
                 }
             }
             
