@@ -4,75 +4,14 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Decodificador de Texto</title>
-        <style>
-            body {
-                text-align: center;
-                background: #CCCCCC;
-            }
-            textarea {
-                width: 385px;
-                height: 185px;
-                border-radius: 15px;
-                padding: 10px;
-            }
-            textarea:hover {
-                border-color:#0f024b
-            }
-            input[type="button"] {
-                border-radius: 5px;
-                padding: 7px;
-                border-width: 1px;
-                cursor: pointer;
-            }
-            input[type="button"]:hover {
-                font-weight: bold;
-            }
-            #log {
-                width: 385px;
-                height: 185px;
-                margin: auto;
-                border: 1px solid #0f024b;
-                border-radius: 15px;
-                padding: 10px;
-            }
-        </style>
-        <script>
-            function encrypt(t) {
-                var textArray = t.split('');
-                for(var i = 0; i < textArray.length; i++) {
-                    if(textArray[i] == 'a') {
-                        textArray[i] = 'ai';
-                    } else if(textArray[i] == 'e') {
-                        textArray[i] = 'enter';
-                    } else if(textArray[i] == 'i') {
-                        textArray[i] = 'imes';
-                 } else if(textArray[i] == 'o') {
-                        textArray[i] = 'ober';
-                    } else if(textArray[i] == 'u') {
-                        textArray[i] = 'ufat';
-                    }
-                }
-                return textArray.join('');
-            }
-            function decrypt(t) {
-                t = t.replace(/enter/g, 'e');
-                t = t.replace(/imes/g, 'i');
-                t = t.replace(/ai/g, 'a');
-                t = t.replace(/ober/g, 'o');
-                t = t.replace(/ufat/g, 'u');
-                return t;
-            }
-            function copyText(t) {
-                return navigator.clipboard.writeText(t.innerText);
-            }
-        </script>
+        <link rel="stylesheet" href="style.css"/>
+        <script src="functions.js"></script>
     </head>
     <body>
         <h1>Decodificador de Texto</h1>
         <textarea id="txt" placeholder="Digite seu texto"></textarea>
         <div><input type="button" value="Encrypt/Decrypt"/></div>
-        <br/>
-        <h3>Output: <button disabled>Copiar</button></h3>
+        <h3>Output<button disabled>Copiar</button></h3>
         <div id="log"></div>
 
         <script>
@@ -82,6 +21,9 @@
             var idLog = document.getElementById('log');
             btCopy.onclick = function() {
                 copyText(idLog);
+            }
+            idTxt.onkeyup = function() {
+                idTxt.value = fixTxt(idTxt.value);
             }
             input.onclick = function() {
                 if(idTxt.value.match(/enter|imes|ai|ober|ufat/g)) {
@@ -93,6 +35,7 @@
                     btCopy.disabled = false;
                 }
             }
+            
         </script>
     </body>
 </html>
