@@ -89,7 +89,9 @@
                 } else {
                     idLog.innerText = encrypt(idTxt.value);
                 }
-                btCopy.disabled = false;
+                if(idTxt.value != '') {
+                    btCopy.disabled = false;
+                }
             }
         </script>
     </body>
