@@ -1,1 +1,42 @@
-
+body {
+    text-align: center;
+    background: #a9d1d8;
+}
+textarea {
+    width: 385px;
+    height: 185px;
+    border-radius: 15px;
+    border-width: 0;
+    padding: 10px;
+}
+textarea:hover {
+    border-color:#0f024b
+}
+input[type="button"] {
+    border-radius: 5px;
+    padding: 7px;
+    border-width: 1px;
+    cursor: pointer;
+}
+input[type="button"]:hover {
+    font-weight: bold;
+    background: #f7f2c6;
+}
+h3 {
+    width: 400px;
+    margin: 10px auto 0;
+    float: center;
+}
+button {
+    position: absolute;
+    right: 35%;
+}
+#log {
+    width: 385px;
+    height: 185px;
+    background: #b2d5db;
+    margin: auto;
+    border: 1px solid #0f024b;
+    border-radius: 15px;
+    padding: 10px;
+}
