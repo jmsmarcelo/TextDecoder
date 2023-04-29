@@ -27,12 +27,12 @@ function copyText(t) {
     return navigator.clipboard.writeText(t.innerText);
 }
 function fixTxt(t) {
-    t = t.toLowerCase();
-    t = t.replace(/[à-ã]/g, 'a');
-    t = t.replace(/[è-ê]/g, 'e');
-    t = t.replace(/[ì-î]/g, 'i');
-    t = t.replace(/[ò-õ]/g, 'o');
-    t = t.replace(/[ù-û]/g, 'u');
-    t = t.replace(/\`|\´|\^|\~/g, '');
+    t = t.toLowerCase().
+    replace(/[à-ã]/g, 'a').
+    replace(/[è-ê]/g, 'e').
+    replace(/[ì-î]/g, 'i').
+    replace(/[ò-õ]/g, 'o').
+    replace(/[ù-û]/g, 'u').
+    replace(/[^a-z0-9\ ]/g, '');
     return t;
 }

@@ -38,6 +38,7 @@
                 idTxt.value = fixTxt(idTxt.value);
             }
             idEnc.onclick = function() {
+                idTxt.value = fixTxt(idTxt.value);
                 idLog.innerText = encrypt(idTxt.value);
 
                 if(idTxt.value != '') {
@@ -45,6 +46,7 @@
                 }
             }
             idDec.onclick = function() {
+                idTxt.value = fixTxt(idTxt.value);
                 if(idTxt.value.match(/enter|imes|ai|ober|ufat/g)) {
                     idLog.innerText = decrypt(idTxt.value);
                     if(idTxt.value != '') {
