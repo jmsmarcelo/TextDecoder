@@ -9,10 +9,17 @@
     </head>
     <body>
         <h1>Decodificador de Texto</h1>
-        <textarea id="txt" placeholder="Digite seu texto"></textarea>
-        <div><input type="button" id="enc" value="Encrypt"/> <input type="button" id="dec" value="Decrypt"/></div>
-        <h3>Output<button disabled>Copy</button></h3>
-        <div id="log"></div>
+        <div class="desk">
+            <div class="firstcol">
+                <textarea id="txt" placeholder="Digite seu texto"></textarea>
+                <div><input type="button" id="enc" value="Encrypt"/> <input type="button" id="dec" value="Decrypt"/></div>
+            </div>
+            <div>
+                <div id="log"></div>
+                <h3>Output<button disabled>Copy</button></h3>
+            </div>
+        </div>
+        
 
         <script>
             var idTxt = document.getElementById('txt');

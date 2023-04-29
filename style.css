@@ -4,17 +4,16 @@ body {
 }
 textarea {
     width: 385px;
-    height: 185px;
+    height: 385px;
     border-radius: 15px;
     border-width: 0;
     padding: 10px;
     resize: none;
 }
-textarea:hover {
-    border-color:#0f024b
-}
+
 input[type="button"] {
     width: 100px;
+    margin-bottom: 7px;
     border-radius: 5px;
     padding: 7px;
     border-width: 1px;
@@ -26,21 +25,44 @@ input[type="button"]:hover {
 }
 h3 {
     width: 400px;
-    margin: 10px auto 0;
+    margin: 0;
     float: center;
 }
 button {
     position: absolute;
-    margin: 0 120px 0;
+    margin: 0 130px 0;
 }
 #log {
     overflow-x: auto;
     width: 385px;
-    height: 185px;
+    height: 385px;
     background: #b2d5db;
-    margin: auto;
     border: 1px solid #0f024b;
     border-radius: 15px;
     padding: 10px;
     word-wrap: break-word;
+}
+.desk {
+    column-count: 2;
+    margin: auto;
+}
+@media (orientation: portrait) {
+    textarea {
+        width: 385px;
+        height: 285px;
+    }
+    #log {
+        width: 385px;
+        height: 285px;
+
+    }
+    .desk {
+        column-count: 1;
+        width: 400px;
+        margin: auto;
+    }
+}
+.firstcol {
+    width: 400px;
+    margin-left: auto;
 }
