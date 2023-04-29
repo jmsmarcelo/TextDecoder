@@ -24,7 +24,7 @@ function decrypt(t) {
     return t;
 }
 function copyText(t) {
-    return navigator.clipboard.writeText(t.innerText);
+    return navigator.clipboard.writeText(t);
 }
 function fixTxt(t) {
     t = t.toLowerCase().
@@ -33,6 +33,7 @@ function fixTxt(t) {
     replace(/[ì-î]/g, 'i').
     replace(/[ò-õ]/g, 'o').
     replace(/[ù-û]/g, 'u').
-    replace(/[^a-z0-9\ ]/g, '');
+    replace(/ç/, 'c').
+    replace(/[^a-z0-9\ \,\.\!\?\/\*\+\-]/g, '');
     return t;
 }
