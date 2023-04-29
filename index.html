@@ -35,7 +35,7 @@
                     try {
                         navigator.clipboard.writeText(idLog.innerText);
                     } catch(e) {
-                        if(e.name == 'TypeError') {
+                        if(e.message.match(/Cannot read properties/)) {
                             alert('Não foi possível copiar!\nAcesse o site em HTTPS');
                             copyTxt = false;
                         }
