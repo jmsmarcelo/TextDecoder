@@ -23,9 +23,6 @@ function decrypt(t) {
     t = t.replace(/ufat/g, 'u');
     return t;
 }
-function copyText(t) {
-    return navigator.clipboard.writeText(t);
-}
 function fixTxt(t) {
     t = t.toLowerCase().
     replace(/[à-ã]/g, 'a').
@@ -34,6 +31,6 @@ function fixTxt(t) {
     replace(/[ò-õ]/g, 'o').
     replace(/[ù-û]/g, 'u').
     replace(/ç/, 'c').
-    replace(/[^a-z0-9\ \,\.\!\?\/\*\+\-]/g, '');
+    replace(/[^a-z0-9\ \,\.\!\?]/g, '');
     return t;
 }

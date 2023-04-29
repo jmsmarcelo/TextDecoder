@@ -24,13 +24,12 @@ input[type="button"]:hover {
     background: #f7f2c6;
 }
 h3 {
-    width: 400px;
     margin: 0;
     float: center;
 }
 button {
     position: absolute;
-    margin: 0 130px 0;
+    margin-left: 120px;
 }
 #log {
     overflow-x: auto;
@@ -44,6 +43,7 @@ button {
 }
 .desk {
     column-count: 2;
+    width: 820px;
     margin: auto;
 }
 @media (orientation: portrait) {
@@ -61,8 +61,4 @@ button {
         width: 400px;
         margin: auto;
     }
-}
-.firstcol {
-    width: 400px;
-    margin-left: auto;
 }
