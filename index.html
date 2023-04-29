@@ -35,16 +35,17 @@
                     try {
                         navigator.clipboard.writeText(idLog.innerText);
                     } catch(e) {
-                        if(e.message.match(/Cannot read properties/)) {
+                        if(e.message.match(/Cannot read properties/) && !window.isSecureContext) {
                             alert('Não foi possível copiar!\nAcesse o site em HTTPS');
                             copyTxt = false;
                         }
-                    }
-                    if(copyTxt) {
-                        btCopy.innerText = 'Copied!';
-                        setTimeout(function() {
-                            btCopy.innerText = 'Copy';
-                        }, 1000);
+                    } finally {
+                        if(copyTxt) {
+                            btCopy.innerText = 'Copied!';
+                            setTimeout(function() {
+                                btCopy.innerText = 'Copy';
+                            }, 1000);
+                        }
                     }
                 }
                 idTxt.onkeyup = function() {
