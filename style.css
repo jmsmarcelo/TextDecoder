@@ -1,64 +1,180 @@
 body {
-    text-align: center;
-    background: #a9d1d8;
+    background: #F3F5FC;
+}
+img[src="logo.svg"] {
+    position: absolute;
+    left: 5%;
+    top: 3%;
+    padding: 0;
+    width: 60px;
+    transition-duration: 1s;
+} img[src="logo.svg"]:hover {
+    transform: scale(1.5);
 }
 textarea {
-    width: 385px;
-    height: 385px;
-    border-radius: 15px;
-    border-width: 0;
-    padding: 10px;
+    position: absolute;
+    border: none;
+    background: none;
+    padding-top: 50px;
+    width: 47.22222222222222vw;
+    height: 365px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+    color: #0A3871;
     resize: none;
+    
+} textarea:focus {
+    outline: none;
+}
+.info {
+    position: absolute;
+    padding-left: 20px;
+    top: calc(100vh - 163px);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: #495057;
+    opacity: 0.8;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+#desk_in img {
+    top: calc(100vh - 162px);
+    width: 16px;
+    position: absolute;
+    padding-right: 10px;
+    opacity: 0.8;
 }
 
-input[type="button"] {
-    width: 100px;
-    margin-bottom: 7px;
-    border-radius: 5px;
-    padding: 7px;
-    border-width: 1px;
+#enc, #dec, #copy {
+    display: block;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    margin: 7px;
+    gap: 8px;
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
+    flex: none;
+    flex-grow: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
     cursor: pointer;
+    transition-duration: 1s;
 }
-input[type="button"]:hover {
-    font-weight: bold;
-    background: #f7f2c6;
+#enc {
+    background: #0A3871;
+    color: #FFFFFF;
+    order: 0;
 }
-h3 {
-    margin: 0;
-    float: center;
+#dec {
+    box-sizing: border-box;
+    background: #D8DFE8;
+    color: #0A3871;
+    order: 1;
 }
-button {
+#desk_in {
+    margin: 80px 40px 0 150px; 
+
+}
+#desk_out {
     position: absolute;
-    margin-left: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 27.77777777777778vw;
+    height: 92.1875vh;
+    right: 2.777777777777778vw;
+    top: 3.90625vh;
+    background-color: #FFFFFF;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
 }
-#log {
+#desk_out h2 {
+    width: 336px;
+    margin: auto;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    text-align: center;
+    color: #343A40;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+#desk_out p {
+    width: 336px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: #495057;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+#out_txt {
+    width: 336px;
+    height: calc(100vh - 200.1px);
+    top: 40px;
+    margin: auto;
     overflow-x: auto;
-    width: 385px;
-    height: 385px;
-    background: #b2d5db;
-    border: 1px solid #0f024b;
-    border-radius: 15px;
-    padding: 10px;
     word-wrap: break-word;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    color: #495057;
+}
+#copy {
+    background: #FFFFFF;
+}
+#enc:hover, #dec:hover, #copy:hover {
+    font-size: 20px;
 }
 .desk {
-    column-count: 2;
-    width: 820px;
-    margin: auto;
+    display: inline-flex;
+}
+.bt {
+    display: inline-flex;
+    position: absolute;
+    text-align: center;
+    bottom: 60px;
 }
 @media (orientation: portrait) {
-    textarea {
-        width: 385px;
-        height: 285px;
-    }
-    #log {
-        width: 385px;
-        height: 285px;
-
-    }
-    .desk {
-        column-count: 1;
-        width: 400px;
-        margin: auto;
+    textarea, #desk_in, #desk_out, .desk, .bt, .info, #desk_in img {
+        position: relative;
     }
 }
+#found {
+    display: none;
+}
+.credits {
+    position: static;
+    margin-top: calc(100vh - 110px);
+    text-align: center;
+}
+a {
+    text-decoration: none;
+} a:hover {
+    text-decoration: underline;
+}
+
