@@ -6,8 +6,9 @@ var deskOut = document.getElementById('desk_out');
 var outTxt = document.getElementById('out_txt');
 var idNone = document.getElementById('none');
 var idFound = document.getElementById('found');
+var logo = document.querySelector('img[src="logo.svg"]');
 var copyTxt = true;
-idCopy.onclick = function() {
+idCopy.addEventListener('click', () => {
     try {
         navigator.clipboard.writeText(outTxt.innerText);
     } catch(e) {
@@ -23,23 +24,26 @@ idCopy.onclick = function() {
             }, 3000);
         }
     }
-}
-idTxt.onkeyup = function() {
+});
+idTxt.addEventListener('keyup', () => {
     idTxt.value = fixTxt(idTxt.value);
-}
-idEnc.onclick = function() {
+});
+idEnc.addEventListener('click', () => {
     idTxt.value = fixTxt(idTxt.value);
     if(idTxt.value != '') {
         idNone.style.display = 'none';
         idFound.style.display = 'block';
         outTxt.innerText = encrypt(idTxt.value);
     }
-}
-idDec.onclick = function() {
+});
+idDec.addEventListener('click', () => {
     idTxt.value = fixTxt(idTxt.value);
     if(idTxt.value.match(/enter|imes|ai|ober|ufat/g)) {
         outTxt.innerText = decrypt(idTxt.value);
         idNone.style.display = 'none';
         idFound.style.display = 'block';
     }
-}
+});
+logo.addEventListener('click', () => {
+    window.open('https://www.alura.com.br', '_blank');
+  });

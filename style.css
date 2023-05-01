@@ -7,6 +7,7 @@ img[src="logo.svg"] {
     top: 3.90625vh;
     left: 5.833333333333333vw;
     transition: transform 1s;
+    cursor: pointer;
 }
 img[src="logo.svg"]:hover {
     transform: scale(1.5);
@@ -33,11 +34,6 @@ img[src="logo.svg"]:hover {
 #txt::placeholder {
     color: #0A3871;
 }
-img[src="info.svg"] {
-    width: 16px;
-    margin-bottom: -3px;
-    margin-right: 4px;
-}
 .info {
     position: absolute;
     bottom: 121px;
@@ -50,6 +46,12 @@ img[src="info.svg"] {
     line-height: 150%;
     color: #495057;
     opacity: 0.8;
+}
+img[src="info.svg"] {
+    width: 16px;
+    margin-bottom: -3px;
+    margin-right: 4px;
+    opacity: 1;
 }
 #none h2 {
     font-family: 'Inter';
