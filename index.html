@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Decodificador de Texto</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" />
-        <link rel="stylesheet" href="reset.css" />
         <link rel="stylesheet" href="style.css" />
         <script src="functions.js"></script>
     </head>
@@ -14,23 +13,21 @@
             <img src="logo.svg" />
         </header>
         <main class="desk">
-            <div id="desk_in">
                 <textarea id="txt" placeholder="Digite seu texto" autofocus></textarea>
-                <img src="info.svg" /><span class="info">Apenas letras minúsculas e sem acento.</span>
-                <div class="bt"><input type="button" id="enc" value="Criptografar" /> <input type="button" id="dec" value="Descriptografar" /></div>
-            </div>
-            <div class="desk_out" id="desk_out">
-                <section>
-                    <span id="none">
-                        <img src="none.svg" />
-                        <h2>Nenhuma mensagem encontrada</h2>
-                        <p>Digite um texto que você deseja criptografar ou descriptografar.</p>
-                    </span>
-                    <span id="found">
-                        <div id="out_txt"></div>
-                        <input type="button" id="copy" value="Copiar" />
-                    </span>
-                </section>
+                <span class="info"><img src="info.svg" /> Apenas letras minúsculas e sem acento.</span>
+                <input type="button" id="enc" value="Criptografar" />
+                <input type="button" id="dec" value="Descriptografar" />
+                <div id="found">
+                    <div id="out_txt"></div>
+                    <input type="button" id="copy" value="Copiar" />
+                </div>
+            <div  id="desk_out">
+                <div id="none">
+                    <img src="none.svg" />
+                    <h2>Nenhuma mensagem encontrada</h2>
+                    <p>Digite um texto que você deseja criptografar ou descriptografar.</p>
+                </div>
+                
             </div>
         </main>
         <footer class="credits">
