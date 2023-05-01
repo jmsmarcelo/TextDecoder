@@ -1,7 +1,7 @@
 body {
     background: #F3F5FC;
 }
-img[src="logo.svg"] {
+img[src="classes/logo.svg"] {
     position: absolute;
     width: 31.09px;
     top: 3.90625vh;
@@ -9,7 +9,7 @@ img[src="logo.svg"] {
     transition: transform 1s;
     cursor: pointer;
 }
-img[src="logo.svg"]:hover {
+img[src="classes/logo.svg"]:hover {
     transform: scale(1.5);
 }
 #txt {
@@ -47,7 +47,7 @@ img[src="logo.svg"]:hover {
     color: #495057;
     opacity: 0.8;
 }
-img[src="info.svg"] {
+img[src="classes/info.svg"] {
     width: 16px;
     margin-bottom: -3px;
     margin-right: 4px;
@@ -156,6 +156,7 @@ input[type="button"]:hover {
     font-size: 24px;
     line-height: 120%;
     color: #343A40;
+    z-index: 2;
 }
 #none p {
     font-family: 'Inter';
@@ -164,6 +165,7 @@ input[type="button"]:hover {
     font-size: 16px;
     line-height: 150%;
     color: #495057;
+    z-index: 2;
 }
 .credits {
     position: absolute;
@@ -179,9 +181,12 @@ a {
 }
 
 @media (max-width: 800px) and (orientation: portrait) {
-    img[src="logo.svg"] {
+    img[src="classes/logo.svg"] {
         top: 24px;
         left: 16px;
+    }
+    #none img {
+        display: none;
     }
     #txt {
         width: 94vw;
@@ -234,9 +239,9 @@ a {
         right: 0;
         margin-left: auto;
         margin-right: auto;
-    }
-    #desk_out img {
-        display: none;
+        background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url("none.svg");
+        background-repeat: no-repeat;
+        background-position: center;
     }
     .credits {
         bottom: -5px;
