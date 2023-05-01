@@ -6,7 +6,7 @@ var deskOut = document.getElementById('desk_out');
 var outTxt = document.getElementById('out_txt');
 var idNone = document.getElementById('none');
 var idFound = document.getElementById('found');
-var logo = document.querySelector('img[src="classes/logo.svg"]');
+var logo = document.querySelector('header img');
 var copyTxt = true;
 idCopy.addEventListener('click', () => {
     try {
