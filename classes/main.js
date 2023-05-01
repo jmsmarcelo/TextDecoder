@@ -30,7 +30,8 @@ idTxt.addEventListener('keyup', () => {
 });
 idEnc.addEventListener('click', () => {
     idTxt.value = fixTxt(idTxt.value);
-    if(idTxt.value != '') {
+    if(idTxt.value.match(/[^\ \s\n]/)) {
+        deskOut.style.backgroundImage = 'none';
         idNone.style.display = 'none';
         idFound.style.display = 'block';
         outTxt.innerText = encrypt(idTxt.value);
@@ -39,6 +40,7 @@ idEnc.addEventListener('click', () => {
 idDec.addEventListener('click', () => {
     idTxt.value = fixTxt(idTxt.value);
     if(idTxt.value.match(/enter|imes|ai|ober|ufat/g)) {
+        deskOut.style.backgroundImage = 'none';
         outTxt.innerText = decrypt(idTxt.value);
         idNone.style.display = 'none';
         idFound.style.display = 'block';
