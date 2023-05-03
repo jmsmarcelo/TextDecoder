@@ -1,5 +1,7 @@
 body {
     background: #F3F5FC;
+    font-family: 'Inter';
+    font-style: normal;
 }
 img[src="classes/logo.svg"] {
     position: absolute;
@@ -14,11 +16,11 @@ img[src="classes/logo.svg"]:hover {
 }
 #txt {
     position: absolute;
-    width: 47.22222222222222vw;
-    height: calc(83.59375vh - 155px);
-    top: 16.40625vh;
-    left: 16.66666666666667vw;
-    border: none;
+    width: calc(100vw - 16vw - 36.5vw);
+    height: calc(100vh - 16vh - 150px);
+    top: calc(100vh - 84vh);
+    left: 16vw;
+    border: '';
     background: none;
     resize: none;
     font-family: 'Inter';
@@ -36,11 +38,9 @@ img[src="classes/logo.svg"]:hover {
 }
 .info {
     position: absolute;
-    bottom: 121px;
-    left: 16.66666666666667vw;
+    top: calc(100vh - 140px);
+    left: 16vw;
     cursor: context-menu;
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 150%;
@@ -54,8 +54,6 @@ img[src="classes/info.svg"] {
     opacity: 1;
 }
 #none h2 {
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 700;
     font-size: 24px;
     line-height: 120%;
@@ -67,8 +65,6 @@ img[src="classes/info.svg"] {
 #none p {
     padding-left: 32px;
     padding-right: 32px;
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
@@ -76,14 +72,14 @@ img[src="classes/info.svg"] {
     color: #495057;
 }
 #none img {
-    width: 48.61111111111111vh;
+    width: 23vw;
 }
 #out_txt {
     position: absolute;
     width: 23.33333333333333vw;
     bottom: 130px;
     top: 60px;
-    right: 56px;
+    right: calc(2vw + 20px);
     z-index: 1;
     overflow-x: auto;
     word-wrap: break-word;
@@ -99,7 +95,7 @@ input[type="button"] {
     text-align: center;
     width: 22.77777777777778vw;
     height: 67px;
-    bottom: 49px;
+    top: calc(100vh - 110px);
     border-radius: 20px;
     padding: 24px;
     border: 1px solid #0A3871;
@@ -115,7 +111,7 @@ input[type="button"]:hover {
     font-weight: bold;
 }
 #enc {
-    left: 16.66666666666667vw;
+    left: 16vw;
     background: #0A3871;
     color: #FFFFFF;
     border: none;
@@ -127,7 +123,7 @@ input[type="button"]:hover {
     color: #0A3871;
 }
 #copy {
-    right: 63px;
+    right: calc(2vw + 25px);
     color: #0A3871;
     z-index: 1;
 }
@@ -135,11 +131,9 @@ input[type="button"]:hover {
     position: absolute;
     display: flex;
     width: 27.77777777777778vw;
-    min-width: 290px;
-    min-height: 285px;
-    top: 30px;
-    right: 30px;
-    bottom: 30px;
+    top: 10px;
+    right: 20px;
+    bottom: 10px;
     text-align: center;
     background: #FFFFFF;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
@@ -150,8 +144,6 @@ input[type="button"]:hover {
     display: none;
 }
 #none h2 {
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 700;
     font-size: 24px;
     line-height: 120%;
@@ -159,8 +151,6 @@ input[type="button"]:hover {
     z-index: 2;
 }
 #none p {
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
@@ -171,8 +161,9 @@ input[type="button"]:hover {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 0;
+    top: calc(100vh - 43px);
     text-align: center;
+    font-size: small;
 }
 a {
     text-decoration: none;
@@ -190,7 +181,7 @@ a {
     }
     #txt {
         width: 94vw;
-        height: calc(40vh - 100px - 35px);
+        height: calc(100vh - 100px - 63.5vh);
         top: 100px;
         left: 0;
         right: 0;
@@ -218,6 +209,7 @@ a {
         margin-right: auto;
     }
     #copy {
+        top: calc(40vh + 180px + 25.5vh);
         width: 85vw;
         left: 0;
         right: 0;
@@ -225,10 +217,11 @@ a {
         margin-right: auto;
     }
     #out_txt {
-        top: calc(40vh + 180px);
+        top: calc(40vh + 185px);
         width: 85vw;
         left: 0;
         right: 0;
+        bottom: 125px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -242,8 +235,5 @@ a {
         background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url("none.svg");
         background-repeat: no-repeat;
         background-position: center;
-    }
-    .credits {
-        bottom: -5px;
     }
 }
