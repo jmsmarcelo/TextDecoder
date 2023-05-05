@@ -210,6 +210,9 @@ a:hover {
         width: 100%;
 
     }
+    .txt-in, .txt-in::placeholder, .txt-in:focus {
+        height: 65%;
+    }
     .desk-out {
         width: 90%;
         height: 63%;
@@ -219,6 +222,19 @@ a:hover {
         margin-left: auto;
         margin-right: auto;
         background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url("none.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .txt-no img {
+        display: none;
+    }
+}
+@media screen and (max-height: 440px) {
+    .txt-no {
+        margin-left: auto;
+        margin-right: auto;
+        background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url("none.svg");
+        background-size: 130%;
         background-repeat: no-repeat;
         background-position: center;
     }
