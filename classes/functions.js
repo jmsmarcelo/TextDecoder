@@ -7,7 +7,7 @@ function encrypt(t) {
             textArray[i] = 'enter';
         } else if(textArray[i] == 'i') {
             textArray[i] = 'imes';
-     } else if(textArray[i] == 'o') {
+        } else if(textArray[i] == 'o') {
             textArray[i] = 'ober';
         } else if(textArray[i] == 'u') {
             textArray[i] = 'ufat';
@@ -16,15 +16,15 @@ function encrypt(t) {
     return textArray.join('');
 }
 function decrypt(t) {
-    t = t.replace(/enter/g, 'e');
-    t = t.replace(/imes/g, 'i');
-    t = t.replace(/ai/g, 'a');
-    t = t.replace(/ober/g, 'o');
-    t = t.replace(/ufat/g, 'u');
-    return t;
+    return t.
+    replace(/enter/g, 'e').
+    replace(/imes/g, 'i').
+    replace(/ai/g, 'a').
+    replace(/ober/g, 'o').
+    replace(/ufat/g, 'u');
 }
 function fixTxt(t) {
-    t = t.toLowerCase().
+    return t.toLowerCase().
     replace(/[à-ã]/g, 'a').
     replace(/[è-ê]/g, 'e').
     replace(/[ì-î]/g, 'i').
@@ -32,5 +32,4 @@ function fixTxt(t) {
     replace(/[ù-û]/g, 'u').
     replace(/ç/, 'c').
     replace(/[^a-z0-9\ \,\.\!\?\s\n]/g, '');
-    return t;
 }

@@ -1,40 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Decodificador de Texto</title>
-        <link rel="icon" type="image/svg+xml" href="classes/logo.svg" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" />
-        <link rel="stylesheet" href="classes/style.css" />
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="classes/logo.svg" type="image/svg+xml">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter">
+        <link rel="stylesheet" href="classes/style.css">
         <script src="classes/functions.js"></script>
+        <title>Decodificador de Texto</title>
     </head>
     <body>
         <header>
-            <img src="classes/logo.svg" />
+            <img src="classes/logo.svg" alt="Logo Alura"> <div></div>
         </header>
         <main>
-            <textarea id="txt" placeholder="Digite seu texto" autofocus></textarea>
-            <span class="info"><img src="classes/info.svg" /> Apenas letras minúsculas e sem acento.</span>
-            <input type="button" id="enc" value="Criptografar" />
-            <input type="button" id="dec" value="Descriptografar" />
-            <div id="found">
-                <div id="out_txt"></div>
-                <input type="button" id="copy" value="Copiar" />
-            </div>
-            <div  id="desk_out">
-                <div id="none">
-                    <img src="classes/none.svg" />
-                    <h2>Nenhuma mensagem encontrada</h2>
-                    <p>Digite um texto que você deseja criptografar ou descriptografar.</p>
+            <section class="desk-in">
+                <textarea class="txt-in" placeholder="Digite seu texto" autofocus></textarea>
+                <div class="info">
+                    <img src="classes/info.svg" alt="Informações"><h6>Apenas letras minúsculas e sem acento.</h6>
                 </div>
-                
-            </div>
+                <div class="btns-in">
+                    <button class="btn-enc">Criptografar</button>
+                    <button class="btn-dec">Descriptografar</button>
+                </div>
+            </section>
+            <section class="desk-out">
+                <div class="txt-out"></div>
+                <button class="btn-copy">Copiar</button>
+                <div class="txt-no">
+                    <img src="classes/none.svg" alt="Sem mensagem">
+                    <h2>Nenhuma mensagem encontrada</h2>
+                    <h5>Digite um texto que você deseja criptografar ou descriptografar</h5>
+                </div>
+            </section>
         </main>
-        <footer class="credits">
-            <p>Developed by <a href="https://github.com/jmsmarcelo/TextDecoder">Marcelo</a></p>
-            <!-- 2023 -->
-        </footer>
         <script src="classes/main.js"></script>
+        <footer>
+        <h6><a href="https://github.com/jmsmarcelo/TextDecoder">Jose Marcelo</a> &copy; 2023</h6>
+        </footer>
     </body>
 </html>

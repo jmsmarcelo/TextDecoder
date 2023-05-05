@@ -1,51 +1,56 @@
-var idTxt = document.getElementById('txt');
-var idEnc = document.getElementById('enc');
-var idDec = document.getElementById('dec');
-var idCopy = document.getElementById('copy');
-var deskOut = document.getElementById('desk_out');
-var outTxt = document.getElementById('out_txt');
-var idNone = document.getElementById('none');
-var idFound = document.getElementById('found');
-var logo = document.querySelector('header img');
-var copyTxt = true;
-idCopy.addEventListener('click', () => {
-    try {
-        navigator.clipboard.writeText(outTxt.innerText);
-    } catch(e) {
-        if(e.message.match(/Cannot read properties/) && !window.isSecureContext) {
-            alert('Não foi possível copiar!\nAcesse o site em HTTPS');
-            copyTxt = false;
+var hdrObjs = document.querySelectorAll('header *');
+var mainObjs = document.querySelectorAll('main [class^="btn-"], main [class^="txt-"]');
+var cls = {};
+
+
+mainObjs.forEach(function(c) {
+    if(c.className.match(/^btn-|^txt-/)) {
+        cls[c.className] = c;
+    }
+    c.addEventListener('click', function() {
+        cls['txt-in'].value = fixTxt(cls['txt-in'].value);
+        if(this.className == 'btn-enc' && cls['txt-in'].value != '') {
+            cls['txt-out'].innerText = encrypt(cls['txt-in'].value);
+            cls['txt-no'].style.display = 'none';
+            cls['txt-out'].style.display = 'block';
+            cls['btn-copy'].style.display = 'block';
+        } else if(this.className == 'btn-dec' && cls['txt-in'].value.match(/enter|imes|ai|ober|ufat/g)) {
+            cls['txt-out'].innerText = decrypt(cls['txt-in'].value);
+            cls['txt-no'].style.display = 'none';
+            cls['txt-out'].style.display = 'block';
+            cls['btn-copy'].style.display = 'block';
+        } else if(this.className == 'btn-copy' && cls['txt-out'].innerText != '') {
+            let copiedTxt = true;
+            try {
+                navigator.clipboard.writeText(cls['txt-out'].innerText);
+            } catch(e) {
+                if(e.message.match(/Cannot read properties/) && !window.isSecureContext) {
+                    alert('Não foi possível copiar!\nAcesse o site em HTTPS');
+                    copiedTxt = false;
+                }
+            } finally {
+                if(copiedTxt) {
+                    cls['btn-copy'].innerText = 'Copiado!';
+                    setTimeout(function() {
+                        cls['btn-copy'].innerText = 'Copiar';
+                    }, 3000);
+                }
+            }
         }
-    } finally {
-        if(copyTxt) {
-            idCopy.value = 'Copiado!';
-            setTimeout(function() {
-                idCopy.value = 'Copiar';
-            }, 3000);
-        }
-    }
+    });
+    c.addEventListener('keyup', () => {
+        cls['txt-in'].value = fixTxt(cls['txt-in'].value);
+    });
 });
-idTxt.addEventListener('keyup', () => {
-    idTxt.value = fixTxt(idTxt.value);
-});
-idEnc.addEventListener('click', () => {
-    idTxt.value = fixTxt(idTxt.value);
-    if(idTxt.value.match(/[^\ \s\n]/)) {
-        deskOut.style.backgroundImage = 'none';
-        idNone.style.display = 'none';
-        idFound.style.display = 'block';
-        outTxt.innerText = encrypt(idTxt.value);
-    }
-});
-idDec.addEventListener('click', () => {
-    idTxt.value = fixTxt(idTxt.value);
-    if(idTxt.value.match(/enter|imes|ai|ober|ufat/g)) {
-        deskOut.style.backgroundImage = 'none';
-        outTxt.innerText = decrypt(idTxt.value);
-        idNone.style.display = 'none';
-        idFound.style.display = 'block';
-    }
-});
-logo.addEventListener('click', () => {
+hdrObjs[0].addEventListener('click', () => {
     window.open('https://www.alura.com.br', '_blank');
-  });
+    return false;
+});
+hdrObjs[1].addEventListener('click', () => {
+    if(!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
+    return false;
+})
