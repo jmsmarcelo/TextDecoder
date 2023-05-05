@@ -35,7 +35,7 @@ main {
     display: flex;
     justify-content: flex-end;
     width: 100%;
-    height: 95%;
+    height: 98%;
     min-width: 690px;
     min-height: 360px;
 }
@@ -185,8 +185,6 @@ a:hover {
 }
 @media screen and (max-width: 800px) and (orientation: portrait) {
     body {
-        width: 100vw;
-        height: 100vh;
         margin: 0%;
     }
     header div {
@@ -208,6 +206,7 @@ a:hover {
     }
     .desk-in {
         width: 100%;
+        height: 100%;
 
     }
     .txt-in, .txt-in::placeholder, .txt-in:focus {
