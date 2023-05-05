@@ -183,7 +183,7 @@ a {
 a:hover {
     text-decoration: underline;
 }
-@media screen and (max-width: 480px) and (orientation: portrait) {
+@media screen and (max-width: 800px) and (orientation: portrait) {
     body {
         width: 100vw;
         height: 100vh;
