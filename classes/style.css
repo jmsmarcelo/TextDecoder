@@ -11,8 +11,8 @@ body {
 }
 header img {
     position: absolute;
-    margin-top: 10px;
-    margin-left: 30px;
+    top: 15px;
+    left: 25px;
     cursor: pointer;
     transition: transform 1s;
 }
@@ -22,7 +22,7 @@ header img:hover {
 header div {
     position: absolute;
     display: none;
-    top: 10px;
+    top: 15px;
     right: 20px;
     width: 30px;
     height: 30px;
@@ -188,7 +188,7 @@ a:hover {
         margin: 0%;
     }
     header div {
-        display: inline-block;
+        display: block;
     }
     :fullscreen header div {
         background-position: -30px 0px;
