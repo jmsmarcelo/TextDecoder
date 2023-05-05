@@ -2,7 +2,6 @@ var hdrObjs = document.querySelectorAll('header *');
 var mainObjs = document.querySelectorAll('main [class^="btn-"], main [class^="txt-"]');
 var cls = {};
 
-
 mainObjs.forEach(function(c) {
     if(c.className.match(/^btn-|^txt-/)) {
         cls[c.className] = c;
@@ -42,6 +41,7 @@ mainObjs.forEach(function(c) {
         cls['txt-in'].value = fixTxt(cls['txt-in'].value);
     });
 });
+
 hdrObjs.forEach(function(t) {
     t.addEventListener('click', function() {
         if(this.tagName.match(/img/i)) {
