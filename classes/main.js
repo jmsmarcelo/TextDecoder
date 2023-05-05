@@ -42,15 +42,17 @@ mainObjs.forEach(function(c) {
         cls['txt-in'].value = fixTxt(cls['txt-in'].value);
     });
 });
-hdrObjs[0].addEventListener('click', () => {
-    window.open('https://www.alura.com.br', '_blank');
-    return false;
+hdrObjs.forEach(function(t) {
+    t.addEventListener('click', function() {
+        if(this.tagName.match(/img/i)) {
+            window.open('https://www.alura.com.br', '_blank');
+        } else if(this.tagName.match(/div/i)) {
+            if(!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else {
+                document.exitFullscreen();
+            }
+        }
+        return false;
+    });
 });
-hdrObjs[1].addEventListener('click', () => {
-    if(!document.fullscreenElement) {
-        document.documentElement.requestFullscreen();
-    } else {
-        document.exitFullscreen();
-    }
-    return false;
-})
