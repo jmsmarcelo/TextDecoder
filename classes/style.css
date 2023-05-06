@@ -198,8 +198,8 @@ a:hover {
     }
     main {
         flex-direction: column;
-        min-width: 0%;
-        min-height: 0%;
+        min-width: 0;
+        min-height: 800px;
         margin: 0%;
         align-items: center;
     }
@@ -214,6 +214,7 @@ a:hover {
     }
     .txt-in, .txt-in::placeholder, .txt-in:focus {
         height: 65%;
+        margin-top: 55px;
     }
     .desk-out {
         width: 90%;

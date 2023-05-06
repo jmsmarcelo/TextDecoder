@@ -23,10 +23,12 @@ mainObjs.forEach(function(c) {
             try {
                 navigator.clipboard.writeText(cls['txt-out'].innerText);
             } catch(e) {
-                if(e.message.match(/Cannot read properties/) && !window.isSecureContext) {
+                if(!window.isSecureContext) {
                     alert('Não foi possível copiar!\nAcesse o site em HTTPS');
-                    copiedTxt = false;
+                } else {
+                    alert('Não foi possível copiar!');
                 }
+                copiedTxt = false;
             } finally {
                 if(copiedTxt) {
                     cls['btn-copy'].innerText = 'Copiado!';
