@@ -34,22 +34,6 @@ mainObjs.forEach(function(c) {
                     alert('Não foi possível copiar!');
                 }
             }
-                
-        } else if(this.className == 'btn-paste') {
-            try {
-                navigator.clipboard.readText().
-                    then((t) => {
-                        if(t != '') {
-                            cls['txt-in'].value = t
-                        }
-                    });
-            } catch {
-                if(!window.isSecureContext) {
-                    alert('Não foi possível colar!\nAcesse o site em HTTPS');
-                } else {
-                    alert('Não foi possível colar!');
-                }
-            }
         }
     });
     c.addEventListener('keyup', () => {
