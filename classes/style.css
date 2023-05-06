@@ -76,6 +76,9 @@ section {
     display: flex;
     width: 97%;
 }
+.info img {
+    width: 16px;
+}
 .info h6 {
     margin: 10px;
     font-size: 12px;
