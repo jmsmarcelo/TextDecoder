@@ -19,22 +19,35 @@ mainObjs.forEach(function(c) {
             cls['txt-out'].style.display = 'block';
             cls['btn-copy'].style.display = 'block';
         } else if(this.className == 'btn-copy' && cls['txt-out'].innerText != '') {
-            let copiedTxt = true;
             try {
-                navigator.clipboard.writeText(cls['txt-out'].innerText);
-            } catch(e) {
+                navigator.clipboard.writeText(cls['txt-out'].innerText).
+                    then(() => {
+                        cls['btn-copy'].innerText = 'Copiado!';
+                        setTimeout(function() {
+                            cls['btn-copy'].innerText = 'Copiar';
+                        }, 3000);
+                    });
+            } catch {
                 if(!window.isSecureContext) {
                     alert('Não foi possível copiar!\nAcesse o site em HTTPS');
                 } else {
                     alert('Não foi possível copiar!');
                 }
-                copiedTxt = false;
-            } finally {
-                if(copiedTxt) {
-                    cls['btn-copy'].innerText = 'Copiado!';
-                    setTimeout(function() {
-                        cls['btn-copy'].innerText = 'Copiar';
-                    }, 3000);
+            }
+                
+        } else if(this.className == 'btn-paste') {
+            try {
+                navigator.clipboard.readText().
+                    then((t) => {
+                        if(t != '') {
+                            cls['txt-in'].value = t
+                        }
+                    });
+            } catch {
+                if(!window.isSecureContext) {
+                    alert('Não foi possível colar!\nAcesse o site em HTTPS');
+                } else {
+                    alert('Não foi possível colar!');
                 }
             }
         }

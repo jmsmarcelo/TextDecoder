@@ -52,10 +52,6 @@ section {
 .desk-in {
     width: 59%;
 }
-.btn-paste {
-    width: 96%;
-    text-align: right;
-}
 .txt-in, .txt-in::placeholder, .txt-in:focus {
     width: 96%;
     height: 70%;
