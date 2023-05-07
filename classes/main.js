@@ -8,7 +8,7 @@ mainObjs.forEach(function(c) {
     }
     c.addEventListener('click', function() {
         cls['txt-in'].value = fixTxt(cls['txt-in'].value);
-        if(this.className == 'btn-enc' && cls['txt-in'].value != '') {
+        if(this.className == 'btn-enc' && cls['txt-in'].value.match(/[a-z]/)) {
             cls['txt-out'].innerText = encrypt(cls['txt-in'].value);
             cls['txt-no'].style.display = 'none';
             cls['txt-out'].style.display = 'block';
