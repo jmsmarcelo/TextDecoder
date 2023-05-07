@@ -1,19 +1,12 @@
 function encrypt(t) {
-    var textArray = t.split('');
-    for(var i = 0; i < textArray.length; i++) {
-        if(textArray[i] == 'a') {
-            textArray[i] = 'ai';
-        } else if(textArray[i] == 'e') {
-            textArray[i] = 'enter';
-        } else if(textArray[i] == 'i') {
-            textArray[i] = 'imes';
-        } else if(textArray[i] == 'o') {
-            textArray[i] = 'ober';
-        } else if(textArray[i] == 'u') {
-            textArray[i] = 'ufat';
+    let arrTxt = t.split('');
+    const keys = { 'a': 'ai', 'e': 'enter', 'i': 'imes', 'o': 'ober', 'u': 'ufat' };
+    for(var i = 0; i < arrTxt.length; i++) {
+        if(typeof keys[arrTxt[i]] != 'undefined') {
+            arrTxt[i] = keys[arrTxt[i]];
         }
     }
-    return textArray.join('');
+    return arrTxt.join('');
 }
 function decrypt(t) {
     return t.
