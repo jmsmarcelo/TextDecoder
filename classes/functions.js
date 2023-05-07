@@ -6,7 +6,7 @@ function encrypt(t) {
             arrTxt[i] = keys[arrTxt[i]];
         }
     }
-    return arrTxt.join('');
+    return textArray.join('');
 }
 function decrypt(t) {
     return t.
