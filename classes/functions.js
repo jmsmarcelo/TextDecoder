@@ -2,7 +2,7 @@ function encrypt(t) {
     let arrTxt = t.split('');
     const keys = { 'a': 'ai', 'e': 'enter', 'i': 'imes', 'o': 'ober', 'u': 'ufat' };
     for(var i = 0; i < arrTxt.length; i++) {
-        if(typeof keys[arrTxt[i]] != 'undefined') {
+        if(typeof keys[arrTxt[i]] !== 'undefined') {
             arrTxt[i] = keys[arrTxt[i]];
         }
     }
