@@ -32,5 +32,5 @@ function fixTxt(t) {
         replace(/[ù-û]/g, 'u').
         replace(/ç/, 'c').
         replace(/[^a-z0-9\ \,\.\!\?\s\n]/g, '').
-        replace(/^[\s]/g, '');
+        replace(/^[\s\n]/g, '');
 }
