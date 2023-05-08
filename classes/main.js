@@ -46,6 +46,13 @@ hdrObjs.forEach(function(t) {
         if(this.tagName.match(/img/i)) {
             window.open('https://www.alura.com.br', '_blank');
         } else if(this.tagName.match(/div/i)) {
+            if(navigator.userAgent.match(/Mac/i)) {
+                if(!document.webkitFullscreenElement) {
+                document.documentElement.webkitRequestFullscreen()
+                } else {
+                    document.webkitExitFullscreen();
+                }
+            }
             if(!document.fullscreenElement) {
                 document.documentElement.requestFullscreen();
             } else {
