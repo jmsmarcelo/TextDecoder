@@ -23,8 +23,8 @@ function fixTxt(t) {
         replace(/[ì-î]/g, 'i').
         replace(/[ò-õ]/g, 'o').
         replace(/[ù-û]/g, 'u').
-        replace(/ç/, 'c').
+        replace(/ç/g, 'c').
         replace(/[^a-z0-9\,\.\!\?\s\n]/g, '').
-        replace(/^[\s\n]+/m, '').
+        replace(/^[\s\n]+/gm, '').
         replace(/\s\s+/g, ' ');
 }

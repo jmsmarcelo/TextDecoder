@@ -1,6 +1,7 @@
-var hdrObjs = document.querySelectorAll('header *');
-var mainObjs = document.querySelectorAll('main [class^="btn-"], main [class^="txt-"]');
-var cls = {};
+var d = document, dE = d.documentElement,
+hdrObjs = d.querySelectorAll('header *'),
+mainObjs = d.querySelectorAll('main [class^="btn-"], main [class^="txt-"]'),
+cls = {};
 
 mainObjs.forEach(function(c) {
     if(c.className.match(/^btn-|^txt-/)) {
@@ -47,16 +48,26 @@ hdrObjs.forEach(function(t) {
             window.open('https://www.alura.com.br', '_blank');
         } else if(this.tagName.match(/div/i)) {
             if(navigator.userAgent.match(/Mac/i)) {
-                if(!document.webkitDisplayingFullscreen) {
-                document.documentElement.webkitEnterFullscreen();
-                } else {
-                    document.webkitExitFullscreen();
+                if(!d.webkitDisplayingFullscreen || !d.webkitFullscreenElement) {
+                    if(dE.webkitEnterFullscreen) {
+                        dE.webkitEnterFullscreen();
+                    } else if(dE.webkitRequestFullscreen) {
+                        dE.webkitRequestFullscreen();
+                    }
+                } else if(d.webkitDisplayingFullscreen || d.webkitFullscreenElement) {
+                    if(d.webkitExitFullscreen) {
+                        d.webkitExitFullscreen();
+                    }
                 }
             }
-            if(!document.fullscreenElement) {
-                document.documentElement.requestFullscreen();
-            } else {
-                document.exitFullscreen();
+            if(!d.fullscreenElement) {
+                if(dE.requestFullscreen) {
+                    dE.requestFullscreen();
+                }
+            } else if(d.fullscreenElement) {
+                if(d.exitFullscreen) {
+                    d.exitFullscreen();
+                }
             }
         }
         return false;

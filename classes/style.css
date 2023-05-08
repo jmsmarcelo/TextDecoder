@@ -3,8 +3,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0
-    ;
+    bottom: 3px;
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -186,6 +185,7 @@ a:hover {
 @media screen and (max-width: 800px) and (orientation: portrait) {
     body {
         margin: 0;
+        bottom: 0;
     }
     header div {
         display: block;
