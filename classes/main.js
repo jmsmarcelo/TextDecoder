@@ -20,25 +20,25 @@ mainObjs.forEach(function(c) {
             cls['txt-out'].style.display = 'block';
             cls['btn-copy'].style.display = 'block';
         } else if(this.className == 'btn-copy' && cls['txt-out'].innerText != '') {
-            let btnCopied = true;
+            let errCopy = '';
             try {
-                navigator.clipboard.writeText(cls['txt-out'].innerText).
-                    then(() => {
-                        cls['btn-copy'].innerText = 'Copiado!';
-                        setTimeout(function() {
-                            cls['btn-copy'].innerText = 'Copiar';
-                        }, 3000),
-                        function(e) {
-                            alert('Não foi possível copiar!\n' + e);
-                        }
-                    });
-            } catch {
+                navigator.clipboard.writeText(cls['txt-out'].innerText);
+            } catch(e) {
                 if(!window.isSecureContext) {
                     alert('Não foi possível copiar!\nAcesse o site em HTTPS');
                 } else {
                     alert('Não foi possível copiar!');
                 }
-            } 
+                errCopy = e;
+            } finally {
+                if(errCopy == '') {
+                    cls['btn-copy'].innerText = 'Copiado!';
+                    setTimeout(() => {
+                        cls['btn-copy'].innerText = 'Copiar';
+                    }, 3000);
+                }
+                    
+            }
         }
     });
     c.addEventListener('keyup', () => {
