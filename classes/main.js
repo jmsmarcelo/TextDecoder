@@ -48,13 +48,13 @@ hdrObjs.forEach(function(t) {
             window.open('https://www.alura.com.br', '_blank');
         } else if(this.tagName.match(/div/i)) {
             if(navigator.userAgent.match(/Mac/i)) {
-                if(!d.webkitDisplayingFullscreen || !d.webkitFullscreenElement) {
+                if(!d.webkitFullscreenElement) {
                     if(dE.webkitEnterFullscreen) {
                         dE.webkitEnterFullscreen();
                     } else if(dE.webkitRequestFullscreen) {
                         dE.webkitRequestFullscreen();
                     }
-                } else if(d.webkitDisplayingFullscreen || d.webkitFullscreenElement) {
+                } else if(d.webkitFullscreenElement) {
                     if(d.webkitExitFullscreen) {
                         d.webkitExitFullscreen();
                     }
