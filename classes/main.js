@@ -2,8 +2,7 @@ var d = document, dE = d.documentElement,
 hdrObjs = d.querySelectorAll('header *'),
 mainObjs = d.querySelectorAll('main [class^="btn-"], main [class^="txt-"]'),
 cls = {};
-var errName = {};
-var errNameList = [];
+
 mainObjs.forEach(function(c) {
     if(c.className.match(/^btn-|^txt-/)) {
         cls[c.className] = c;
