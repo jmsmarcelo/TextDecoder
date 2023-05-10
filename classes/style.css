@@ -211,7 +211,7 @@ a:hover {
     }
     .txt-in, .txt-in::placeholder, .txt-in:focus {
         height: 65%;
-        margin-top: 55px;
+        margin-top: 80px;
     }
     .desk-out {
         width: 90%;
@@ -223,7 +223,7 @@ a:hover {
         margin-right: auto;
         background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url("none.svg");
         background-repeat: no-repeat;
-        background-position: center;
+        background-position: top;
     }
     .txt-no img {
         display: none;
