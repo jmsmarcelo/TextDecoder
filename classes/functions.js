@@ -28,3 +28,68 @@ function fixTxt(t) {
         replace(/^[\s\n]+/gm, '').
         replace(/\s\s+/g, ' ');
 }
+function changeOut() {
+    cls['txt-no'].style.display = 'none';
+    cls['txt-out'].style.display = 'block';
+    cls['btn-copy'].style.display = 'block';
+}
+function copyTxt() {
+    try {
+        navigator.clipboard.writeText(cls['txt-out'].innerText).
+            then(() => {
+                cls['btn-copy'].innerText = 'Copiado!';
+                setTimeout(() => {
+                    cls['btn-copy'].innerText = 'Copiar';
+                }, 3000);
+            }).catch(() => {
+                copyTxtOld();
+            });
+    } catch {
+        copyTxtOld();
+    }
+}
+function copyTxtOld() {
+    let txtElem = d.createElement('textarea');
+    let copied = true;
+    txtElem.value = cls['txt-out'].innerText;
+    d.body.appendChild(txtElem);
+    txtElem.select();
+    try {
+        d.execCommand('copy');
+    } catch {
+        alert('Não foi possível copiar!');
+        copied = false;
+    } finally {
+        if(copied) {
+            d.body.removeChild(txtElem);
+            cls['btn-copy'].innerText = 'Copiado!';
+            setTimeout(() => {
+                cls['btn-copy'].innerText = 'Copiar';
+            }, 3000);
+        }
+    }
+}
+function changeScreen() {
+    if(navigator.userAgent.match(/Mac/i)) {
+        if(!d.webkitFullscreenElement) {
+            if(dE.webkitEnterFullscreen) {
+                dE.webkitEnterFullscreen();
+            } else if(dE.webkitRequestFullscreen) {
+                dE.webkitRequestFullscreen();
+            }
+        } else if(d.webkitFullscreenElement) {
+            if(d.webkitExitFullscreen) {
+                d.webkitExitFullscreen();
+            }
+        }
+    }
+    if(!d.fullscreenElement) {
+        if(dE.requestFullscreen) {
+            dE.requestFullscreen();
+        }
+    } else if(d.fullscreenElement) {
+        if(d.exitFullscreen) {
+            d.exitFullscreen();
+        }
+    }
+}
