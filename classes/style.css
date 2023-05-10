@@ -229,6 +229,21 @@ a:hover {
         display: none;
     }
 }
+@media screen and (max-width: 490px) and (orientation: portrait) {
+    .btns-in {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        align-items: center;
+    }
+    .btn-enc {
+        margin-bottom: 15px;
+    }
+    .desk-out {
+        height: 55%;
+
+    }
+}
 @media screen and (max-height: 440px) {
     .txt-no {
         margin-left: auto;
