@@ -69,26 +69,19 @@ function copyTxtOld() {
     }
 }
 function scnMode() {
-    if(navigator.userAgent.match(/Mac/i)) {
-        if(!d.webkitFullscreenElement) {
-            if(dE.webkitEnterFullscreen) {
-                dE.webkitEnterFullscreen();
-            } else if(dE.webkitRequestFullscreen) {
-                dE.webkitRequestFullscreen();
-            }
-        } else if(d.webkitFullscreenElement) {
-            if(d.webkitExitFullscreen) {
-                d.webkitExitFullscreen();
-            }
-        }
-    }
-    if(!d.fullscreenElement) {
-        if(dE.requestFullscreen) {
-            dE.requestFullscreen();
-        }
-    } else if(d.fullscreenElement) {
+    if(d.webkitFullscreenElement || d.fullscreenElement) {
         if(d.exitFullscreen) {
             d.exitFullscreen();
+        } else if(d.webkitExitFullscreen) {
+            d.webkitExitFullscreen();
+        }
+    } else {
+        if(dE.requestFullscreen) {
+            dE.requestFullscreen();
+        } else if(dE.webkitRequestFullscreen) {
+            dE.webkitRequestFullscreen();
+        } else if(dE.webkitEnterFullscreen) {
+            dE.webkitEnterFullscreen();
         }
     }
 }

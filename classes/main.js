@@ -33,10 +33,8 @@ hdrObjs.forEach(function(t) {
         }
     });
     if(t.tagName.match(/div/i)) {
-        if(!d.fullscreenEnabled && !d.webkitFullscreenEnabled) {
-            if(t.style.display == 'block') {
-                t.style.display = 'none';
-            }
+        if(d.webkitFullscreenEnabled === false || d.fullscreenEnabled === false) {
+            t.style.display = 'none';
         }
     }
 });
