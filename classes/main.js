@@ -29,7 +29,14 @@ hdrObjs.forEach(function(t) {
         if(this.tagName.match(/img/i)) {
             window.open('https://www.alura.com.br', '_blank');
         } else if(this.tagName.match(/div/i)) {
-            changeScreen();
+            scnMode();
         }
     });
+    if(t.tagName.match(/div/i)) {
+        if(!d.fullscreenEnabled && !d.webkitFullscreenEnabled) {
+            if(t.style.display == 'block') {
+                t.style.display = 'none';
+            }
+        }
+    }
 });

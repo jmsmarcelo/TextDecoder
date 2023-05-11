@@ -1,12 +1,10 @@
 function encrypt(t) {
-    let arrTxt = t.split('');
-    const keys = { 'a': 'ai', 'e': 'enter', 'i': 'imes', 'o': 'ober', 'u': 'ufat' };
-    for(var i = 0; i < arrTxt.length; i++) {
-        if(typeof keys[arrTxt[i]] !== 'undefined') {
-            arrTxt[i] = keys[arrTxt[i]];
-        }
-    }
-    return arrTxt.join('');
+    return t.
+        replace(/e/g, 'enter').
+        replace(/i/g, 'imes').
+        replace(/a/g, 'ai').
+        replace(/o/g, 'ober').
+        replace(/u/g, 'ufat');
 }
 function decrypt(t) {
     return t.
@@ -17,7 +15,8 @@ function decrypt(t) {
         replace(/ufat/g, 'u');
 }
 function fixTxt(t) {
-    return t.toLowerCase().
+    return t.
+        toLowerCase().
         replace(/[à-ã]/g, 'a').
         replace(/[è-ê]/g, 'e').
         replace(/[ì-î]/g, 'i').
@@ -49,8 +48,8 @@ function copyTxt() {
     }
 }
 function copyTxtOld() {
-    let txtElem = d.createElement('textarea');
     let copied = true;
+    let txtElem = d.createElement('textarea');
     txtElem.value = cls['txt-out'].innerText;
     d.body.appendChild(txtElem);
     txtElem.select();
@@ -60,8 +59,8 @@ function copyTxtOld() {
         alert('Não foi possível copiar!');
         copied = false;
     } finally {
+        d.body.removeChild(txtElem);
         if(copied) {
-            d.body.removeChild(txtElem);
             cls['btn-copy'].innerText = 'Copiado!';
             setTimeout(() => {
                 cls['btn-copy'].innerText = 'Copiar';
@@ -69,7 +68,7 @@ function copyTxtOld() {
         }
     }
 }
-function changeScreen() {
+function scnMode() {
     if(navigator.userAgent.match(/Mac/i)) {
         if(!d.webkitFullscreenElement) {
             if(dE.webkitEnterFullscreen) {
