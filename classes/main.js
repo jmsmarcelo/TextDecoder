@@ -33,7 +33,7 @@ hdrObjs.forEach(function(t) {
         }
     });
     if(t.tagName.match(/div/i)) {
-        if(d.webkitFullscreenEnabled === false || d.fullscreenEnabled === false) {
+        if(navigator.userAgent.match(/iPhone/i) || d.fullscreenEnabled === false || d.webkitFullscreenEnabled === false) {
             t.style.display = 'none';
         }
     }
