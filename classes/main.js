@@ -5,22 +5,22 @@ cls = {};
 
 mainObjs.forEach(function(c) {
     if(c.className.match(/^btn-|^txt-/)) {
-        cls[c.className] = c;
+        cls[cN(c.className)] = c;
     }
     c.addEventListener('click', function() {
-        cls['txt-in'].value = fixTxt(cls['txt-in'].value);
-        if(this.className == 'btn-enc' && cls['txt-in'].value.match(/[a-z]/)) {
-            cls['txt-out'].innerText = encrypt(cls['txt-in'].value);
+        cls.txtIn.value = fixTxt(cls.txtIn.value);
+        if(this.className == 'btn-enc' && cls.txtIn.value.match(/[a-z]/)) {
+            cls.txtOut.innerText = encrypt(cls.txtIn.value);
             changeOut();
-        } else if(this.className == 'btn-dec' && cls['txt-in'].value.match(/enter|imes|ai|ober|ufat/g)) {
-            cls['txt-out'].innerText = decrypt(cls['txt-in'].value);
+        } else if(this.className == 'btn-dec' && cls.txtIn.value.match(/enter|imes|ai|ober|ufat/g)) {
+            cls.txtOut.innerText = decrypt(cls.txtIn.value);
             changeOut();
-        } else if(this.className == 'btn-copy' && cls['txt-out'].innerText != '') {
+        } else if(this.className == 'btn-copy' && cls.txtOut.innerText != '') {
             copyTxt();
         }
     });
     c.addEventListener('keyup', () => {
-        cls['txt-in'].value = fixTxt(cls['txt-in'].value);
+        cls.txtIn.value = fixTxt(cls.txtIn.value);
     });
 });
 

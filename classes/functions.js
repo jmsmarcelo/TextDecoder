@@ -1,3 +1,9 @@
+function cN(n) {
+    return n.
+        replace(/-(.)/, function(m, l) {
+            return l.toUpperCase();
+        });
+}
 function encrypt(t) {
     return t.
         replace(/e/g, 'enter').
@@ -28,17 +34,17 @@ function fixTxt(t) {
         replace(/\s\s+/g, ' ');
 }
 function changeOut() {
-    cls['txt-no'].style.display = 'none';
-    cls['txt-out'].style.display = 'block';
-    cls['btn-copy'].style.display = 'block';
+    cls.txtNo.style.display = 'none';
+    cls.txtOut.style.display = 'block';
+    cls.btnCopy.style.display = 'block';
 }
 function copyTxt() {
     try {
-        navigator.clipboard.writeText(cls['txt-out'].innerText).
+        navigator.clipboard.writeText(cls.txtOut.innerText).
             then(() => {
-                cls['btn-copy'].innerText = 'Copiado!';
+                cls.btnCopy.innerText = 'Copiado!';
                 setTimeout(() => {
-                    cls['btn-copy'].innerText = 'Copiar';
+                    cls.btnCopy.innerText = 'Copiar';
                 }, 3000);
             }).catch(() => {
                 copyTxtOld();
@@ -50,7 +56,7 @@ function copyTxt() {
 function copyTxtOld() {
     let copied = true;
     let txtElem = d.createElement('textarea');
-    txtElem.value = cls['txt-out'].innerText;
+    txtElem.value = cls.txtOut.innerText;
     d.body.appendChild(txtElem);
     txtElem.select();
     try {
@@ -61,15 +67,15 @@ function copyTxtOld() {
     } finally {
         d.body.removeChild(txtElem);
         if(copied) {
-            cls['btn-copy'].innerText = 'Copiado!';
+            cls.btnCopy.innerText = 'Copiado!';
             setTimeout(() => {
-                cls['btn-copy'].innerText = 'Copiar';
+                cls.btnCopy.innerText = 'Copiar';
             }, 3000);
         }
     }
 }
 function scnMode() {
-    if(d.webkitFullscreenElement || d.fullscreenElement) {
+    if(d.fullscreenElement || d.webkitFullscreenElement) {
         if(d.exitFullscreen) {
             d.exitFullscreen();
         } else if(d.webkitExitFullscreen) {
