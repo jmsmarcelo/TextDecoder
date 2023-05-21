@@ -1,5 +1,5 @@
 # TextDecoder
-<p>Decodificador de Texto - Alura Challenges Oracle ONE</p>
+<h3>Decodificador de Texto - Alura Challenges Oracle ONE</h3>
 
 <h2>Boas vindas ao primeiro desafio!</h2>
 
@@ -14,21 +14,16 @@
     <li>A letra "u" é convertida para "ufat"</li>
 </ul>
 
-
-
-
-
-
-
 <p>Requisitos:</p>
-<ul>
-    <li>Deve funcionar apenas com letras minúsculas</li>
-    <li>Não devem ser utilizados letras com acentos nem caracteres especiais</li>
-    <li>Deve ser possível converter uma palavra para a versão criptografada e também retornar uma palavra criptografada para a versão original.
-<p>Por exemplo:</p>
-<code>"gato" => "gaitober"</code>
-<code>gaitober" => "gato"</code>
-
-A página deve ter campos para inserção do texto a ser criptografado ou descriptografado, e a pessoa usuária deve poder escolher entre as duas opções
-O resultado deve ser exibido na tela.</li>
-</ul>
+<dl>
+    <dt>- Deve funcionar apenas com letras minúsculas</dt>
+    <dt>- Não devem ser utilizados letras com acentos nem caracteres especiais</dt>
+    <dt>- Deve ser possível converter uma palavra para a versão criptografada e também retornar uma palavra criptografada para a versão original.</dt>
+    <dd><p>Por exemplo:</p>
+    <pre>
+        <code>"gato" => "gaitober"
+        gaitober" => "gato"</code>
+    </pre></dd>
+    <dt>- A página deve ter campos para inserção do texto a ser criptografado ou descriptografado, e a pessoa usuária deve poder escolher entre as duas opções</dt>
+    <dt>- O resultado deve ser exibido na tela.</dt>
+</dl>
