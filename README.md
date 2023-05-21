@@ -28,3 +28,6 @@ Durante estas duas semanas, vamos trabalhar em uma aplicação que criptografa t
   ```
 - A página deve ter campos para inserção do texto a ser criptografado ou descriptografado, e a pessoa usuária deve poder escolher entre as duas opções
 - O resultado deve ser exibido na tela.
+
+## Projeto Concluído
+![Badge](https://github.com/jmsmarcelo/TextDecoder/assets/32857346/c12d487f-a061-49f6-95ed-45ac34ab9d4d)
